@@ -1,10 +1,8 @@
 <?php
 $user = 'root';
-$password = 'root';
+$password = '';
 $database = 'persondb';
 $pdo = 'null';
-
-//TODO : uitgevoerd op voorwaarde dat er geen drop, delete of truncate in staat.
 
 if (stristr($_GET["query"], 'drop') == true || stristr($_GET["query"], 'delete') == true || stristr($_GET["query"], 'truncate') == true) {
 
@@ -19,8 +17,6 @@ if (stristr($_GET["query"], 'drop') == true || stristr($_GET["query"], 'delete')
         $statement->setFetchMode(PDO::FETCH_ASSOC);
         $statement->execute();
 
-
-        //TODO : via while loop afdrukken
         print("<table>");
         while ($row = $statement->fetch()) {
             print('<tr><td>' . $row['id'] . '</td><td>' . $row['name'] . '</td></tr>');
