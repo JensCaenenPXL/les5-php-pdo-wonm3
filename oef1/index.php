@@ -1,5 +1,5 @@
 <?php
-    include("ingave.php");
+include("ingave.php");
 ?>
 
 <!DOCTYPE html>

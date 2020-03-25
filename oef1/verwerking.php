@@ -1,12 +1,11 @@
 <?php
 $user = 'root';
-$password = 'root';
+$password = '';
 $database = 'persondb';
+$query = $_GET["query"];
 $pdo = 'null';
 
-//TODO : uitgevoerd op voorwaarde dat er geen drop, delete of truncate in staat.
-
-if (stristr($_GET["query"], 'drop') == true || stristr($_GET["query"], 'delete') == true || stristr($_GET["query"], 'truncate') == true) {
+if (stristr($query, 'drop') == true || stristr($query, 'delete') == true || stristr($query, 'truncate') == true) {
 
     print("De opgegeven parameters zijn niet toegelaten");
 
@@ -15,12 +14,10 @@ if (stristr($_GET["query"], 'drop') == true || stristr($_GET["query"], 'delete')
 
     try {
         $pdo = new PDO("mysql:host=localhost;dbname=$database", $user, $password);
-        $statement = $pdo->query($_GET["query"]);
+        $statement = $pdo->query($query);
         $statement->setFetchMode(PDO::FETCH_ASSOC);
         $statement->execute();
 
-
-        //TODO : via while loop afdrukken
         print("<table>");
         while ($row = $statement->fetch()) {
             print('<tr><td>' . $row['id'] . '</td><td>' . $row['name'] . '</td></tr>');
