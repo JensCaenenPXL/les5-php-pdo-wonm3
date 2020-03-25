@@ -1,3 +1,7 @@
+<?php
+    include("ingave.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +12,9 @@
 <form action="ingave.php">
     <label for="database_select">Databank</label>
     <select name="database_select" id="database_select">
-        <option value="persondb">persondb</option>
+        <?php while ($db = $db_list->fetchColumn(0)) {
+            echo "<option value=\"$db\">$db</option>";
+        } ?>
     </select><br/>
     <label for="query">SQL Query (drop, delete en truncate niet toegelaten)</label><br/>
     <textarea id="query" rows="4" cols="50"></textarea>
