@@ -9,7 +9,7 @@ try {
     $statement = $pdo->prepare();                                                      //TODO : database tonen
     $statement->setFetchMode(PDO::FETCH_ASSOC);
     $statement->execute();
-    var_dump($statement->fetch());
+    var_dump($statement->fetchAll());
 
 
 } catch (PDOException $e) {
