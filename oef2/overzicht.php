@@ -23,7 +23,7 @@
     <input type="submit" value="Voeg toe">
 </form>
 <br>
-<form action="verwijder.php">
+<form action="bevestig.php">
     <label>Verwijder gebruiker:</label>
     <input type="text" name="name">
     <input type="submit" value="Verwijder">
