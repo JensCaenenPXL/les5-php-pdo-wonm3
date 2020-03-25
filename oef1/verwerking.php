@@ -21,6 +21,11 @@ try {
 
 
     //TODO : via while loop afdrukken
+    print("<table>");
+    while ($row = $statement->fetch()){
+        print('<tr><td>'. $row['id'] . '</td><td>' . $row['name'] . '</td></tr>');
+    }
+    print("</table>");
 
 } catch (PDOException $e) {
     print 'Exception!: ' . $e->getMessage();
