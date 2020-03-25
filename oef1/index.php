@@ -16,8 +16,11 @@
             echo "<option value=\"$db\">$db</option>";
         } ?>
     </select><br/>
-    <label for="query">SQL Query (drop, delete en truncate niet toegelaten)</label><br/>
-    <textarea id="query" rows="4" cols="50"></textarea>
+    <label for="query">
+        SQL Query (drop, delete en truncate niet toegelaten)
+        <br>
+        <textarea name="query" rows="4" cols="50"></textarea>
+    </label>
     <br/>
     <br/>
     <button id="submit">Voer uit</button>
