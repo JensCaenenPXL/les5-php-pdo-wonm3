@@ -1,5 +1,8 @@
 <?php
-
+    include("dbconnect.php");
+    $sql = "SELECT * FROM gebruikers";
+    $result = $db_conn->prepare($sql);
+    $result->execute();
 ?>
 
 <html>
@@ -7,12 +10,13 @@
     <title>Overzicht</title>
 </head>
 <body>
+<h2>Gebruikerslijst</h2>
 <ul>
-<?php
-    //TODO: get list
-?>
+<?php while($gebruiker = $result->fetch()) { ?>
+    <li><?php echo $gebruiker[1] ?></li>
+<?php } ?>
 </ul>
-<br>
+<hr>
 <form action="toevoegen.php">
     <label>Voeg gebruiker toe:</label>
     <input type="text" name="name">
