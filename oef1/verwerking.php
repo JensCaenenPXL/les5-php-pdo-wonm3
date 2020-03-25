@@ -4,7 +4,7 @@ $password = '';
 $database = $_GET['database_select'];
 $pdo = 'null';
 
-if (stristr($_GET["query"], 'drop') == true || stristr($_GET["query"], 'delete') == true || stristr($_GET["query"], 'truncate') == true) {
+if (stristr($_GET["query"], 'drop') || stristr($_GET["query"], 'delete') || stristr($_GET["query"], 'truncate')) {
 
     print("De opgegeven parameters zijn niet toegelaten");
 
