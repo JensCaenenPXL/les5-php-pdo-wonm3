@@ -9,9 +9,11 @@ try {
     $statement = $pdo->prepare();
     $statement->setFetchMode(PDO::FETCH_ASSOC);
     $statement->execute();
+    var_dump($statement->fetch());
 
 
 } catch (PDOException $e) {
     print 'Exception!: ' . $e->getMessage();
 
 }
+$pdo=null;
