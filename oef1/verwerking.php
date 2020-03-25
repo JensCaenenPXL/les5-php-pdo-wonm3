@@ -1,7 +1,7 @@
 <?php
 $user = 'root';
 $password = '';
-$database = 'persondb';
+$database = $_GET['database_select'];
 $pdo = 'null';
 
 if (stristr($_GET["query"], 'drop') == true || stristr($_GET["query"], 'delete') == true || stristr($_GET["query"], 'truncate') == true) {
