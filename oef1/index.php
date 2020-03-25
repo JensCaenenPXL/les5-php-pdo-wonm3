@@ -9,7 +9,7 @@
     <title>Database</title>
 </head>
 <body>
-<form action="ingave.php">
+<form action="verwerking.php">
     <label for="database_select">Databank</label>
     <select name="database_select" id="database_select">
         <?php while ($db = $db_list->fetchColumn(0)) {
