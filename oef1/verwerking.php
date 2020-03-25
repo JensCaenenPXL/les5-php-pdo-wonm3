@@ -14,8 +14,8 @@ if (stristr($_GET["query"], 'drop') || stristr($_GET["query"], 'delete') || stri
     try {
         $pdo = new PDO("mysql:host=localhost;dbname=$database", $user, $password);
         $statement = $pdo->query($_GET["query"]);
-        $statement->setFetchMode(PDO::FETCH_ASSOC);
-        $statement->execute();
+        //$statement->setFetchMode(PDO::FETCH_ASSOC);
+        //$statement->execute();
 
         print("<table>");
         while ($row = $statement->fetch()) {
