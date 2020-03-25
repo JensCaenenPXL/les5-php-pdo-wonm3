@@ -12,8 +12,8 @@
 <body>
 <h2>Gebruikerslijst</h2>
 <ul>
-<?php while($gebruiker = $result->fetch()) { ?>
-    <li><?php echo $gebruiker[1] ?></li>
+<?php while($user = $result->fetch()) { ?>
+    <li><?php echo $user[1] ?></li>
 <?php } ?>
 </ul>
 <hr>
