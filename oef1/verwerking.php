@@ -8,7 +8,7 @@ $pdo = 'null';
 
 try {
     $pdo = new PDO("mysql:host=localhost;dbname=$database", $user, $password);
-    $statement = $pdo->query();                                              //query nog invullen van html formulier
+    $statement = $pdo->query($_GET["query"]);
     $statement->setFetchMode(PDO::FETCH_ASSOC);
     $statement->execute();
 
