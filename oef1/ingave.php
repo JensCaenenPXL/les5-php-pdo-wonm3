@@ -1,7 +1,7 @@
 <?php
 $user='root';
 $password='root';
-$database = $_POST['database_select'];
+$database = 'persondb';
 $pdo=null;
 
 try {
